@@ -1,4 +1,6 @@
 import React from "react";
+//to use tailwind css
+import classNames from "classnames";
 //allow to access the location object that represents the active URL
 // navigate is use to navigate the pages
 import { useLocation, useNavigate } from "react-router-dom";
@@ -30,24 +32,30 @@ export default function Header() {
           <ul className="flex space-x-10">
             {/* py- padding , text-sm - size of the text, border-b is border button */}
             <li
-              className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${
-                pathMathRoute("/") && "text-black border-b-red-500"
+             className={`cursor-pointer py-3 text-sm font-semibold ${
+                pathMathRoute("/")
+                  ? "text-black border-b-[3px] border-red-500"
+                  : "text-gray-400 border-b-2 border-transparent"
               }`}
               onClick={() => navigate("/")}
             >
               Home
             </li>
             <li
-              className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${
-                pathMathRoute("/Offers") && "text-black border-b-red-500"
+              className={`cursor-pointer py-3 text-sm font-semibold ${
+                pathMathRoute("/Offers")
+                  ? "text-black border-b-[3px] border-red-500"
+                  : "text-gray-400 border-b-2 border-transparent"
               }`}
               onClick={() => navigate("/Offers")}
             >
               Offers
             </li>
             <li
-              className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${
-                pathMathRoute("/SignIn") && "text-black border-b-red-500"
+             className={`cursor-pointer py-3 text-sm font-semibold ${
+                pathMathRoute("/SignIn")
+                  ? "text-black border-b-[3px] border-red-500"
+                  : "text-gray-400 border-b-2 border-transparent"
               }`}
               onClick={() => navigate("/SignIn")}
             >
