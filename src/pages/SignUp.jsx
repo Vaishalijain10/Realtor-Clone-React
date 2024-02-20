@@ -2,6 +2,15 @@ import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import OAuth from "../components/OAuth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import { db } from "../firebase";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
@@ -10,12 +19,43 @@ export default function SignUp() {
     email: "",
     password: "",
   });
-  const { name,email, password } = formData;
+
+  const { name, email, password } = formData;
+  const navigate = useNavigate();
   function onChange(e) {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.id]: e.target.value,
     }));
+  }
+
+  async function onSubmit(e) {
+    //preventing to refresh the page
+    e.preventDefault();
+    //try catch method
+    try {
+      const auth = getAuth();
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      updateProfile(auth.currentUser, {
+        displayName: name,
+      });
+
+      const user = userCredential.user;
+      const formDataCopy = { ...formData };
+      delete formDataCopy.password;
+      formDataCopy.timestamp = serverTimestamp();
+
+      await setDoc(doc(db, "users", user.uid), formDataCopy);
+      toast.success("Sign up was successful")
+      navigate("/");
+    } catch (error) {
+      toast.error("Something went wrong with the  registration");
+    }
   }
   return (
     <section>
@@ -31,8 +71,8 @@ export default function SignUp() {
           />
         </div>
         <div className="w-full md:w-[67%] lg:w-[40%] ml-20">
-          <form action="">
-          <input
+          <form onSubmit={onSubmit}>
+            <input
               type="TEXT"
               id="name"
               value={name}
@@ -72,7 +112,7 @@ export default function SignUp() {
 
             <div className="flex justify-between whitespace-nowrap text-sm sm:text-lg">
               <p className="mb-6 ">
-                 Have an account?
+                Have an account?
                 <Link
                   to="/SignIn"
                   className="text-red-600 hover:text-red-800 transition duration-200 ease-in-out ml-1 "
@@ -102,7 +142,7 @@ export default function SignUp() {
             >
               <p className="text-center font-semibold mx-4">OR</p>
             </div>
-            <OAuth/>
+            <OAuth />
           </form>
         </div>
       </div>

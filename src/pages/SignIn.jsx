@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import OAuth from "../components/OAuth";
+
+
 export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+
   const { email, password } = formData;
   function onChange(e) {
     setFormData((prevState) => ({
@@ -15,6 +18,7 @@ export default function SignIn() {
       [e.target.id]: e.target.value,
     }));
   }
+
   return (
     <section>
       <h1 className="text-3xl text-center mt-6 font-bold">Sign In</h1>
@@ -29,7 +33,7 @@ export default function SignIn() {
           />
         </div>
         <div className="w-full md:w-[67%] lg:w-[40%] ml-20">
-          <form action="">
+          <form>
             <input
               type="email"
               id="email"
@@ -92,7 +96,7 @@ export default function SignIn() {
             >
               <p className="text-center font-semibold mx-4">OR</p>
             </div>
-            <OAuth/>
+            <OAuth />
           </form>
         </div>
       </div>
