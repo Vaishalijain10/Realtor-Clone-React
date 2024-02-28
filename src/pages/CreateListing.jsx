@@ -178,6 +178,7 @@ export default function CreateListing() {
       imgUrls,
       geolocation,
       timestamp: serverTimestamp(),
+      //to display the name of the user in the collection of lists created.
       userRef: auth.currentUser.uid,
     };
 
