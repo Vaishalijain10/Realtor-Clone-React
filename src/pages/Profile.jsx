@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { getAuth, updateProfile } from "firebase/auth";
 import { doc, updateDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
-import { onChange } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
+import { onChange, toast } from "react-toastify";
 import { db } from "../firebase";
-import { toast } from "react-toastify";
+import { FcHome } from "react-icons/fc";
 
 export default function Profile() {
   const auth = getAuth();
@@ -64,11 +64,10 @@ export default function Profile() {
               disabled={!changeDetails}
               //calling a function called onChange
               onChange={onChange}
-              className={`cursor-no-drop mb-6 w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition ease-in-out ${
-                changeDetails
+              className={`cursor-no-drop mb-6 w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition ease-in-out ${changeDetails
                   ? "cursor-text bg-gray-200"
                   : "cursor-no-drop focus:bg-gray-200"
-              }`}
+                }`}
             />
 
             <input
@@ -76,11 +75,10 @@ export default function Profile() {
               id="email"
               value={email}
               disabled={!changeDetails}
-              className={`mb-6 w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition ease-in-out ${
-                changeDetails
+              className={`mb-6 w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition ease-in-out ${changeDetails
                   ? "cursor-text bg-gray-200"
                   : "cursor-no-drop focus:bg-gray-200"
-              }`}
+                }`}
             />
 
             <div className="flex justify-between whitespace-nowrap text-sm sm:text-lg">
@@ -104,6 +102,18 @@ export default function Profile() {
               </p>
             </div>
           </form>
+          <button
+            type="submit"
+            className="u-full bg-blue-600 text-white uppercase px-7 py-3 text-sm font-medium rounded shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800"
+          >
+            <Link
+              to="/CreateListing"
+              className="flex justify-center items-center"
+            >
+              <FcHome className="mr-2 text-3xl bg-red-200 rounded-full p-1 border-2" />
+              Sell or rent your home
+            </Link>
+          </button>
         </div>
       </section>
     </>
