@@ -1,11 +1,10 @@
 //importing
 
-// MdOutlineLocationOn
 import React from "react";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import { MdOutlineLocationOn } from "react-icons/md";
-import { FaTrash } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa6";
 import { MdEdit } from "react-icons/md";
 
 export default function ListingItem({ listing, id, onEdit, onDelete }) {
@@ -58,9 +57,11 @@ export default function ListingItem({ listing, id, onEdit, onDelete }) {
           </div>
         </div>
       </Link>
+
+      {/* Add delete and edit functionality to the my listing section */}
       {onDelete && (
         <FaTrash
-          className="absolute bottom-2 right-2 h-[14px] cursor-pointer text-red-500"
+          className="absolute bottom-2 right-2 h-[14px] cursor-pointer "
           onClick={() => onDelete(listing.id)}
         />
       )}
