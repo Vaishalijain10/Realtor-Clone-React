@@ -1,6 +1,3 @@
-// import { type } from "@testing-library/user-event/dist/type";
-// import { useState } from "react";
-// import { onChange } from "react-toastify";
 
 import { useState } from "react";
 import Spinner from "../components/Spinner";

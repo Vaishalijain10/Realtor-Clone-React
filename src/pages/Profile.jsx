@@ -63,7 +63,6 @@ export default function Profile() {
     }
   }
 
-  
   useEffect(() => {
     async function fetchUserListings() {
       const listingRef = collection(db, "listings");
@@ -142,13 +141,13 @@ export default function Profile() {
           </form>
           <button
             type="submit"
-            className="u-full bg-blue-600 text-white uppercase px-7 py-3 text-sm font-medium rounded shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800"
+            className="w-full bg-blue-600 text-white uppercase px-7 py-3 mt-3 text-sm font-medium rounded shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800"
           >
             <Link
               to="/CreateListing"
               className="flex justify-center items-center"
             >
-              <FcHome className="mr-2 text-3xl bg-red-200 rounded-full p-1 border-2" />
+              <FcHome className="mr-2 text-2xl bg-red-200 rounded-full p-1 border-2" />
               Sell or rent your home
             </Link>
           </button>
@@ -158,8 +157,10 @@ export default function Profile() {
       <div className="max-w-6xl px-3 mt-3 mx-auto">
         {!loading && listings.length > 0 && (
           <>
-            <h2 className="text-2xl text-center font-semibold">My Listings</h2>
-            <ul>
+            <h2 className="text-2xl text-center font-semibold mb-6">
+              My Listings
+            </h2>
+            <ul className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl-grid-cols-5 mt-6 mb-6 ">
               {listings.map((listing) => (
                 // adding another component called listing item
                 <ListingItem
