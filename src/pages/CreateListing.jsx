@@ -207,11 +207,10 @@ export default function CreateListing() {
             id="type"
             value="sale"
             onClick={onChange}
-            className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${
-              type === "rent"
+            className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${type === "rent"
                 ? "bg-white text-black"
                 : "bg-slate-600 text-white"
-            }`}
+              }`}
           >
             Sell
           </button>
@@ -220,11 +219,10 @@ export default function CreateListing() {
             id="type"
             value="rent"
             onClick={onChange}
-            className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${
-              type === "sale"
+            className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${type === "sale"
                 ? "bg-white text-black"
                 : "bg-slate-600 text-white"
-            }`}
+              }`}
           >
             Rent
           </button>
@@ -283,9 +281,8 @@ export default function CreateListing() {
             id="parking"
             value={true}
             onClick={onChange}
-            className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${
-              !parking ? "bg-white text-black" : "bg-slate-600 text-white"
-            }`}
+            className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${!parking ? "bg-white text-black" : "bg-slate-600 text-white"
+              }`}
           >
             Yes
           </button>
@@ -294,9 +291,8 @@ export default function CreateListing() {
             id="parking"
             value={false}
             onClick={onChange}
-            className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${
-              parking ? "bg-white text-black" : "bg-slate-600 text-white"
-            }`}
+            className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${parking ? "bg-white text-black" : "bg-slate-600 text-white"
+              }`}
           >
             No
           </button>
@@ -310,9 +306,8 @@ export default function CreateListing() {
             id="furnished"
             value={true}
             onClick={onChange}
-            className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${
-              !furnished ? "bg-white text-black" : "bg-slate-600 text-white"
-            }`}
+            className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${!furnished ? "bg-white text-black" : "bg-slate-600 text-white"
+              }`}
           >
             Yes
           </button>
@@ -321,9 +316,8 @@ export default function CreateListing() {
             id="furnished"
             value={false}
             onClick={onChange}
-            className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${
-              furnished ? "bg-white text-black" : "bg-slate-600 text-white"
-            }`}
+            className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${furnished ? "bg-white text-black" : "bg-slate-600 text-white"
+              }`}
           >
             No
           </button>
@@ -392,9 +386,8 @@ export default function CreateListing() {
             id="offer"
             value={true}
             onClick={onChange}
-            className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${
-              !offer ? "bg-white text-black" : "bg-slate-600 text-white"
-            }`}
+            className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${!offer ? "bg-white text-black" : "bg-slate-600 text-white"
+              }`}
           >
             Yes
           </button>
@@ -403,9 +396,8 @@ export default function CreateListing() {
             id="offer"
             value={false}
             onClick={onChange}
-            className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${
-              offer ? "bg-white text-black" : "bg-slate-600 text-white"
-            }`}
+            className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded  hover:shadow-lg focus:shadow-lg active:shadow-lg transition duration-150 ease-in-out w-full ${offer ? "bg-white text-black" : "bg-slate-600 text-white"
+              }`}
           >
             No
           </button>

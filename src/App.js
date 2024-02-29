@@ -10,6 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PrivateRoute from "./components/PrivateRoute";
 import CreateListing from "./pages/CreateListing";
+import EditListing from "./pages/EditListing";
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
           {/* PrivateRoute is to give security/ authentication to the URL */}
           <Route path="/CreateListing" element={<PrivateRoute />}>
             <Route path="/CreateListing" element={<CreateListing />}></Route>
+          </Route>
+
+          <Route path="/edit-listing" element={<PrivateRoute />}>
+            <Route path="/edit-listing:listingId" element={<EditListing />}></Route>
           </Route>
         </Routes>
       </Router>
