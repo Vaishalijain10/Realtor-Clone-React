@@ -9,7 +9,7 @@ service cloud.firestore {
     allow read;
     allow create: if request.auth != null && request.resource.data.imgUrls.size()< 7;
     allow delete: if resource.data.userRef == request.auth.uid;
-    allow update: if resource.data.user.Ref == request.auth.uid;
+    allow update: if resource.data.userRef == request.auth.uid;
     }
       //Users
       match /users/{user}{
@@ -20,7 +20,6 @@ service cloud.firestore {
     }
 }
 
-
 //storage rules
 
 rules_version = '2';
@@ -28,14 +27,14 @@ rules_version = '2';
 // Craft rules based on data in your Firestore database
 // allow write: if firestore.get(
 //    /databases/(default)/documents/users/$(request.auth.uid)).data.isAdmin;
-service firebase.storage {
-  match /b/{bucket}/o {
-    match /{allPaths=**} {
-      allow read;
-      allow write: if
-      request.auth !=null && 
-      request.resource.size < 2 * 1024 * 1024 && //2MB 
-      request.resource.contentType.matches('image/.*')
+  service firebase.storage {
+    match /b/{bucket}/o {
+      match /{allPaths=**} {
+        allow read;
+        allow write: if
+        request.auth !=null && 
+        request.resource.size < 2 * 1024 * 1024 && //2MB 
+        request.resource.contentType.matches('image/.*')
+      }
     }
   }
-}

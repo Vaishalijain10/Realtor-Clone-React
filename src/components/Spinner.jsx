@@ -1,5 +1,5 @@
 import React from "react";
-//importing spinner
+
 import spinner from "../assets/svg/spinner.svg";
 
 
