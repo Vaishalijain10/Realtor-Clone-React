@@ -12,6 +12,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import CreateListing from "./pages/CreateListing";
 import EditListing from "./pages/EditListing";
 import Listing from "./pages/Listing";
+import Category from "./pages/Category";
 
 // {/* PrivateRoute is to give security/ authentication to the URL */}
 function App() {
@@ -27,9 +28,13 @@ function App() {
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
-          <Route path="/category/:categoryName/:listingId" element={<Listing />} />
-          <Route path="/Offers" element={<Offers />} />
 
+          <Route
+            path="/category/:categoryName/:listingId"
+            element={<Listing />}
+          />
+          <Route path="/Offers" element={<Offers />} />
+          <Route path="/category/:categoryName" element={<Category/>} />
           <Route path="/CreateListing" element={<PrivateRoute />}>
             <Route path="/CreateListing" element={<CreateListing />} />
           </Route>

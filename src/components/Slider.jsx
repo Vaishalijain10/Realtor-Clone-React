@@ -3,12 +3,12 @@ import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
 import { db } from "../firebase";
 import Spinner from "../components/Spinner";
 
-
 import { register } from "swiper/element/bundle";
 // register Swiper custom elements
 
 import { useNavigate } from "react-router-dom";
 export default function Slider() {
+    
   const [listings, setListings] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -38,8 +38,9 @@ export default function Slider() {
   }
   if (listings.length === 0) {
     return (
-      <div>
-        <h1>We have no Listings yet </h1>
+      <div className="text-center font-bold rgb(245, 255, 245) shadow shadow-gray">
+        <h1 > Opps! Cannot Display the Slider</h1>
+        <h1>Scroll and Explore more options!</h1>
       </div>
     );
   }
