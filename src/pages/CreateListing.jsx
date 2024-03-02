@@ -100,6 +100,7 @@ export default function CreateListing() {
       const response = await fetch(
         // geolocation api :- console.cloud.google searching goe-coding API.
         `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE_API_KEY}`
+
       );
       const data = await response.json();
       console.log(data);
@@ -251,7 +252,7 @@ export default function CreateListing() {
               id="bedrooms"
               className="w-full px-4 py-2 text-lg  text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 text-center"
               value={bedrooms}
-              onChange={onchange}
+              onChange={onChange}
               min="1"
               max="50"
               required
@@ -265,7 +266,7 @@ export default function CreateListing() {
               id="bathrooms"
               className="w-full px-4 py-2 text-lg  text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 text-center"
               value={bathrooms}
-              onChange={onchange}
+              onChange={onChange}
               min="1"
               max="50"
               required
