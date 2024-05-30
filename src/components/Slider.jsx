@@ -36,14 +36,7 @@ export default function Slider() {
   if (loading) {
     return <Spinner />;
   }
-  if (listings.length === 0) {
-    return (
-      <div className="text-center font-bold rgb(245, 255, 245) shadow shadow-gray">
-        <h1 > Opps! Cannot Display the Slider</h1>
-        <h1>Scroll and Explore more options!</h1>
-      </div>
-    );
-  }
+  
   return (
     listings && (
       <>
